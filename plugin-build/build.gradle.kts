@@ -4,7 +4,6 @@ plugins {
     alias(libs.plugins.kotlin) apply false
     alias(libs.plugins.pluginPublish) apply false
     alias(libs.plugins.detekt)
-    alias(libs.plugins.ktlint)
     alias(libs.plugins.versionCheck)
 }
 
@@ -19,24 +18,20 @@ allprojects {
 
     apply {
         plugin("io.gitlab.arturbosch.detekt")
-        plugin("org.jlleitschuh.gradle.ktlint")
-    }
-
-    ktlint {
-        debug.set(false)
-        verbose.set(true)
-        android.set(false)
-        outputToConsole.set(true)
-        ignoreFailures.set(false)
-        enableExperimentalRules.set(true)
-        filter {
-            exclude("**/generated/**")
-            include("**/kotlin/**")
-        }
     }
 
     detekt {
+        ignoreFailures = false
+        parallel = false
+        buildUponDefaultConfig = true
+        debug = false
+        ignoredBuildTypes = listOf("release")
+        autoCorrect = true
         config = rootProject.files("../config/detekt/detekt.yml")
+    }
+
+    dependencies {
+        detektPlugins(project.rootProject.libs.detekt.formatting)
     }
 }
 

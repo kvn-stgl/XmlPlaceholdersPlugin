@@ -13,6 +13,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = ("com.ncorti.kotlin.gradle.template")
+rootProject.name = ("de.stieglitz.gradle.xmlplaceholders")
 
 include(":plugin")
