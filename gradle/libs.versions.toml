@@ -2,7 +2,7 @@
 detekt = "1.20.0"
 kotlin = "1.6.21"
 pluginPublish = "0.21.0"
-versionCheck = "0.42.0"
+versionCheck = "0.51.0"
 agp = "7.2.0"
 
 [plugins]
