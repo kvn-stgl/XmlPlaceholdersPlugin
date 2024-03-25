@@ -1,5 +1,5 @@
 [versions]
-detekt = "1.20.0"
+detekt = "1.23.6"
 kotlin = "1.6.21"
 pluginPublish = "0.21.0"
 versionCheck = "0.42.0"
